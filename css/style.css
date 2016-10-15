@@ -1,0 +1,184 @@
+/*MIT License
+
+Copyright (c) 2016 Ashley Holton
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.*/
+
+*,
+*:after,
+*:before
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+}
+
+body
+{
+	background: #232428;
+	color: #ffffff;
+	font: 16px 'Montserrat', sans-serif;
+}
+
+h1
+{
+	font-size: 50px;
+}
+
+#messages
+{
+	height: 37px;
+}
+
+#messages div
+{
+	position: absolute;
+	display: block;
+	width: 324px;
+	font-size: 30px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.green-text
+{
+	color: #2ecc71;
+}
+
+.red-text
+{
+	color: #e74c3c;
+}
+
+#container
+{
+	width: 324px;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.side-bar
+{
+	width: 600px;
+}
+
+#grid-container
+{
+	width: 324px;
+	height: 324px;
+	margin: 30px 0;
+}
+
+#grid-container.go-green .cell .back
+{
+	background: #2ecc71;
+}
+
+#grid-container.go-red .cell .back
+{
+	background: #e74c3c;
+}
+
+.cell
+{
+	float: left;
+	margin: 4px;
+	cursor: pointer;
+}
+
+.cell, .front, .back
+{
+	width: 100px;
+	height: 100px;
+}
+
+.cell .back,
+.cell .front
+{
+	position:absolute;
+	transition: 0.5s;
+	border-radius: 10px;
+}
+
+.cell .back,
+.playing .cell:hover .front,
+.cell.used .front
+{
+	transform: scale(0);
+}
+
+.playing .cell:hover .back,
+.cell.used .back
+{
+	transform: scale(1);
+}
+
+.front
+{
+	background: #26272b;
+}
+
+.red .back
+{
+	background: #e74c3c !important;
+}
+
+.green .back
+{
+	background: #2ecc71 !important;
+}
+
+.info-bar-container
+{
+	background: #26272b;
+	width: 100%;
+	height: 100px;
+	box-sizing: border-box;
+	padding: 20px;
+	color: #dddddd;
+	margin-top: 30px;
+}
+
+.info-bar
+{
+	width: 324px;
+	margin: 0 auto;
+}
+
+.info-bar-container
+{
+	text-align: center;
+}
+
+.info-bar .info-box
+{
+	float: left;
+	width: 33.33%;
+}
+
+.info-bar div .top-text
+{
+	font-size: 16px;
+}
+
+.info-bar div .bottom-text
+{
+	font-size: 32px;
+}
